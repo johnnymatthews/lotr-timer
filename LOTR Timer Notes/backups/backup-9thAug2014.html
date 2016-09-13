@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="how, many, times, can, i, watch, lord, of, the, rings, lord of the rings, LOTR, LOTRO, Fellowship of the ring, Two Towers, Return of the King, Aragorn, Arwen, Bilbo, Boromir, Denethor, Elrond, Eomer, Eowyn, Faramir, Frodo, Galadriel, Gandalf, Gimli, Gollum, Haldir, Isildur, Legolas, Merry, Pippin, Sam, Saruman, Sauron, Theoden, Treebeard, Wormtongue" /> <!--Yeah that's right, I just named most of the main characters in the LOTR because I'm that cool, and I totally didn't borrow the list of another site...-->
+    <meta name="description" content="This site application will tell you how many times you can watch the Lord of the Rings trilogy within a set time." />
+    <meta name="author" content="John Matthews, Mohn Jatthews, mohnjatthews, johnmatthews">
+    <title>How Many Times Can I Watch Lord Of The Rings</title>
+    </head>
+    
+    <style>
+	body{text-align: center; font-family: sans-serif; color: #60615F; background: #101010;}
+	a{text-decoration: none; color: #FFFFFF;}
+	h1{color: #3E3E3E;}
+	.wrapper{padding: 5% 5% 0% 5%;}
+	@media only screen and (min-width: 920px) {.wrapper{padding: 5% 25% 0% 25%;}}
+</style>
+<body>
+
+<h1>LOTR Timer Project</h1>
+
+<button onclick="getUserTime()">Begin</button>
+
+<p id="hoursToBurn"></p>
+<p id="secondsToBurn"></p>
+<p id="watchMultiple"></p>
+<p id="sceneOutput"></p>
+    
+<script>
+
+var sceneLocation;
+var loopsLOTR;
+var secondsRemaining;
+var LOTR = 39840;
+
+function getUserTime() {
+    var userHours = prompt("How much time have you got (in hours)?", "3");
+    
+    if (userHours!== null) { // get times and loops for LOTR
+        
+        if (userHours > 1) {
+            document.getElementById("hoursToBurn").innerHTML = "You've got " + userHours + " hours to burn.";
+        } else {
+            document.getElementById("hoursToBurn").innerHTML = "You've got " + userHours + " hour to burn.";
+        }
+        
+        var userSeconds = ((userHours * 60) * 60);
+        
+        if (userSeconds > 1) {
+            document.getElementById("secondsToBurn").innerHTML = "You've got " + userSeconds + " seconds to burn.";
+        } else {
+            document.getElementById("secondsToBurn").innerHTML = "You've got 1 second to burn.";
+        }
+        
+        {// a very large comment section, please ignore.
+        // say LOTR was 1000 seconds long
+        // if userSeconds > 1000 seconds
+        //     need to figure out how many times more it is
+        //     so say userSeconds is 3500
+        //       divide userSeconds by 1000 = userSeconds is 3.5 times longer than LOTR.
+        //       so user can watch Lord of the Rings 3.5 times.
+        //     let's try another one.
+        //       say userSeconds is 5029
+        //       divide userSeconds by 1000 = 5.029, meaning the user can watch LOTR 5 times and have 29 seconds remaining.
+        //     let's try real world
+        //       userSeconds = 54000s (15 hours)
+        //       LOTR = 39840s
+        //       54000 / 39840 = 1.35542169
+        //       User can watch LOTR once through and have (0.35542169*39840) seconds left over.
+        
+        // if userSeconds > 39840 then
+        //     foo = userSeconds / 39840;
+        //     boo = math.blah will get first number (eg: 1);
+        //     remainder = foo - boo;
+        //     secondRemaining = remainder * 39840;
+        }
+        
+        if (userSeconds > LOTR) { // if userSecond is longer than LOTR then get LOTR loops and seconds remaining.
+            var userSecondsDivided = userSeconds / LOTR;
+            loopsLOTR = Math.floor(userSecondsDivided); //LOTR loops
+            var removeLoops = userSecondsDivided - loopsLOTR;
+            secondsRemaining = removeLoops * LOTR;
+            
+            returnResults(secondsRemaining, loopsLOTR);// send results to returnResults
+        } else { // get seconds and make LOTR loops set to null or equivalent.
+            secondsRemaining = LOTR - userSeconds;
+            loopsLOTR = 0;
+            
+            returnResults(secondsRemaining, loopsLOTR);// send results to returnResults
+        }
+    }
+}
+
+function returnResults(seconds, loops) {
+
+    if (loops !== 0 && loops > 1){ // output full LOTR loops
+        document.getElementById("watchMultiple").innerHTML = "You can watch LOTRs " + loops + " times!";     
+    } else {
+        document.getElementById("watchMultiple").innerHTML = "You can watch LOTRs once!";     
+    }
+
+    // output which scene seconds get too.
+    
+}
+
+function returnScene(sceneLocation) {
+    if (sceneLocation == null) {
+        document.getElementById("sceneOutput").innerHTML = "No Scene.";
+    } else {
+        document.getElementById("sceneOutput").innerHTML = "You got up to " + sceneLocation;
+    }
+}
+
+// fotr+tt+rotk = 228m+235m+201m
+// total = 664m
+// total = 39840s
+</script>
+    
+</body>
+</html>
+
+
+
