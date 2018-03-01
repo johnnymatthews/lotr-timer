@@ -62,10 +62,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6" id="results">
-                    <div class="p-5">
-                        <h4 id="intro">You can watch The Lord of the Rings</h4>
-                        <h2 class="display-4"><span id="lotr_multiple">0</span> times...</h2>
-                        <p>You got up to <span id="output_scene"></span> in <span id="output_movie"></span>. That's the one where <span id="output_scene_description"></span></p>
+                    <div class="p-5" id="output_text">
                     </div>
                 </div>
             </div>
@@ -117,6 +114,9 @@
                 // The user didn't input anything.
                 document.getElementById('intro').innerHTML = 'You need to input some numbers mate...';
             }
+
+            // Setup output text markers.
+            document.getElementById('output_text').innerHTML = '<h4 id="intro">You can watch The Lord of the Rings</h4><h2 class="display-4"><span id="lotr_multiple">0</span> times...</h2><p>You got up to <span id="output_scene"></span> in <span id="output_movie"></span>. That\'s the one where <span id="output_scene_description"></span></p>';
 
             // Output findings
             // fas_return = [lotr_multiple, output_movie, output_scene]
