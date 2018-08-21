@@ -1,0 +1,200 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Quattrocento', serif;
+    color: white;
+    background: linear-gradient(270deg, #06a713, #7320b6);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+h1 {
+    font-family: 'Fanwood Text', serif;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+.masthead {
+    padding-top: 10vh;
+}
+
+.title-card {
+    max-width: 500px;
+}
+
+/* START SLIDER */
+
+input[type=range].slider {
+    -webkit-appearance: none;
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+input[type=range].slider:focus {
+    outline: none;
+}
+
+input[type=range].slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 25.6px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #484d4d;
+    border-radius: 0px;
+    border: 0px solid #010101;
+}
+
+input[type=range].slider::-webkit-slider-thumb {
+    box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+    border: 0px solid #ff1e00;
+    height: 27px;
+    width: 18px;
+    border-radius: 0px;
+    background: rgba(57, 216, 95, 0.93);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -0.7px;
+}
+
+input[type=range].slider:focus::-webkit-slider-runnable-track {
+    background: #545a5a;
+}
+
+input[type=range].slider::-moz-range-track {
+    width: 100%;
+    height: 25.6px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #484d4d;
+    border-radius: 0px;
+    border: 0px solid #010101;
+}
+
+input[type=range].slider::-moz-range-thumb {
+    box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+    border: 0px solid #ff1e00;
+    height: 27px;
+    width: 18px;
+    border-radius: 0px;
+    background: rgba(57, 216, 95, 0.93);
+    cursor: pointer;
+}
+
+input[type=range].slider::-ms-track {
+    width: 100%;
+    height: 25.6px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range].slider::-ms-fill-lower {
+    background: #3c4040;
+    border: 0px solid #010101;
+    border-radius: 0px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range].slider::-ms-fill-upper {
+    background: #484d4d;
+    border: 0px solid #010101;
+    border-radius: 0px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range].slider::-ms-thumb {
+    box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+    border: 0px solid #ff1e00;
+    height: 27px;
+    width: 18px;
+    border-radius: 0px;
+    background: rgba(57, 216, 95, 0.93);
+    cursor: pointer;
+    height: 25.6px;
+}
+
+input[type=range].slider:focus::-ms-fill-lower {
+    background: #484d4d;
+}
+
+input[type=range].slider:focus::-ms-fill-upper {
+    background: #545a5a;
+}
+
+/* END SLIDER */
+
+.go-button {
+    padding: 10px 20px 10px 20px;
+    font-size: 1.2em;
+    background: black;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.go-button:hover {
+    background: white;
+    color: black;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media (min-width: 992px) {
+    body {
+        background-image: url("hobbiton.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    h1 {
+        font-size: 5.5rem;
+    }
+    h2 {
+        font-size: 3.0rem;
+    }
+}
