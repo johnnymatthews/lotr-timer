@@ -1,11 +1,16 @@
-// Set all the objects.
+// Global variables.
+let results = [];
+
+// Set user input DOM objects.
 const slider = document.querySelector('.slider');
 const number_output = document.querySelector('.output');
-const movie_poster_placeholder = document.querySelector('#poster');
-const first_title = document.querySelector('#first_title');
 
-// String variables.
-const got_to = ""
+// Set movie result DOM objects.
+const results_section = document.querySelector('#results_section');
+const movie_poster_placeholder = document.querySelector('#poster');
+const multiple_result = document.querySelector('#first_title');
+const movie_result = document.querySelector('#first_title');
+const scene_result = document.querySelector('#first_title');
 
 // Initilize the slider number.
 number_output.innerHTML = slider.value;
@@ -15,38 +20,76 @@ slider.oninput = function () {
 
 // Gets called when the user clicks on the main button.
 function main() {
-    document.querySelector('#results_section').innerHTML = '<h3>You go up to...</h3><h1 id="first_title">The Two Towers!</h1><h4>Specifically, <i><span name="scene">Foundation\'s of Stone</span></i>. That\'s the one where <span name="scene_description">very little happens</span>.<span name="multiple_intro"> This was after watching the entire trilogy</span></h4><h2><span name="multiple">3</span> times over!</h2><br><a onclick="resetPage()" class="go-button">Go again?</a>';
-    returnMovieDetails();
+    setPlayMultiple();
+    setMovieResult();
+    setSceneResult();
+    setMovieResult();
+    paintResults();
 }
 
-function returnMovieDetails() {
-    if (slider.value < 30) {
-        first_title.innerHTML = 'Fellowship of the Ring';
-    } else if (slider.value > 90) {
-        first_title.innerHTML = 'Two Towers';
+// Set the amount of time the user can watch the trilogy.
+function setPlayMultiple() {
+    results.multi = 1;
+}
+
+// Set which movie the user get's up to.
+function setMovieResult() {
+    if (slider.value < 198) {
+        results.movie = 'Fellowship of the Ring';
+        results.poster = 'fellowship-of-the-ring';
+    } else if (slider.value > 384) {
+        results.movie = 'Two Towers';
+        results.poster = 'two-towers';
     } else {
-        first_title.innerHTML = 'Return of the King';
-    }
-
-    switch (true) {
-        case (user_input < 417):
-            output_scene = ("Prologue: One Ring to Rule Them All...");
-            break;
-        default:
-            console.log('Default hit');
+        results.movie = 'Return of the King';
+        results.poster = 'return-of-the-king';
     }
 }
 
-function showMoviePoster(movie) {
-    console.log(movie);
-    movie_poster_placeholder.src = "images/" + movie;
-    movie_poster_placeholder.scrollIntoView();
+// Set which scene in the movie the user get's up to. Also sets the scene description.
+function setSceneResult() {
+    results.scene = "Prologue: One Ring to Rule Them All...";
+    results.scene_desc = "Galadriel talks about what happened before the story.";
+    // switch (true) {
+    //     case (slider.value < 417):
+    //         results.scene = "Prologue: One Ring to Rule Them All...";
+    //         console.log('First scene hit.');
+    //         break;
+    //     default:
+    //         results.scene = "The first scene.";
+    //         console.log('Default hit');
+    // }
+}
+
+// Clears the results section, then paints all the results into the tags.
+function paintResults() {
+    // Clear everything first.
+    results_section.innerHTML = '<h3>You go up to...</h3><h1 id="title_tag"></h1><h4>Specifically, <i><span id="scene_tag"></span></i>. That\'s the one where <span id="scene_description_tag">very little happens</span>.<span id="multiple_tag"> This was after watching the entire trilogy</span></h4><h2 name="multiple_value_tag">3 times over!</h2><br><a onclick="resetPage()" class="go-button">Go again?</a>';
+
+    // Set DOM variables.
+    const title_tag = document.querySelector('#title_tag');
+    const scene_tag = document.querySelector('#scene_tag');
+    const scene_description_tag = document.querySelector('#scene_description_tag');
+    // const multiple_tag = document.querySelector('#multiple_tag');
+    // const multiple_tag_value = document.querySelector('#multiple_tag_value');
+
+    title_tag.innerHTML = results.movie;
+    scene_tag.innerHTML = results.scene;
+    scene_description_tag.innerHTML = results.scene_desc;
+    
 }
 
 // Returns the page to it's original state, as in what the user sees when they first open up the page.
 function resetPage() {
     window.location.reload();
-    // document.querySelector('#results_section').innerHTML = `<h1 id="first_title" class="mb-1">Lord of the Rings <br> <i>Timer</i></h1><p>Set the time, press the button, and find out where you get up to in the greatest movie trilogy of all time.</p><h2>I\'ve got <span class="output">${slider.max / 2}</span> hours to burn</h2><br><input type="range" class="slider" min=1 max=168><br><a onclick="main()" class="go-button">To Isengard!</a>`
 }
 
-console.log(slider);
+
+// ====================
+// DEPRECATED FUNCTIONS
+
+function showMoviePoster(movie) {
+    console.log(movie);
+    movie_poster_placeholder.src = `images/${movie}.jpg`;
+    movie_poster_placeholder.scrollIntoView();
+}

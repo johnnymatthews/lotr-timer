@@ -7,9 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>The Lord of the Rings Timer</title>
+    <link href="https://fonts.googleapis.com/css?family=Fanwood+Text|Quattrocento" rel="stylesheet">
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fanwood+Text|Quattrocento" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.ico" />
 </head>
 
@@ -21,11 +21,10 @@
             <section id="results_section">
                 <h1 id="first_title" class="mb-1">The Lord of the Rings <i>Timer</i></h1>
                 <p>Set the time, press the button, and find out where you get up to in the greatest movie trilogy of all time.</p>
-                <h2>I've got <span class="output"></span> hours to burn</h2><br>
-                <input type="range" class="slider" min=1 max=168><br>
+                <h2>I've got <span class="output"></span> minutes to burn</h2><br>
+                <input id="user_input" type="range" class="slider" min=1 max=1440><br>
                 <a onclick="main()" class="go-button">To Isengard!</a>
             </section>
-
 
             <!-- <section>
                 <h3>You go up to...</h3>
