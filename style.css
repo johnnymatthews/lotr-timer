@@ -137,7 +137,7 @@ input[type=range].slider:focus::-ms-fill-upper {
 
 .go-button:hover {
     background: white;
-    color: black;
+    color: black !important;
 }
 
 img {
