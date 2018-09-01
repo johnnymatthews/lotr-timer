@@ -3,7 +3,11 @@ body, html {
     height: 100%;
     font-family: 'Quattrocento', serif;
     color: white;
+    background-image: url("hobbiton.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 h1 {
     font-family: 'Fanwood Text', serif;
 }
@@ -144,11 +148,6 @@ img {
 }
 
 @media (min-width: 992px) {
-    body {
-        background-image: url("hobbiton.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
     h1 {
         font-size: 5.5rem;
     }
