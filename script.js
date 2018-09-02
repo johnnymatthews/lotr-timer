@@ -29,18 +29,28 @@ function main() {
 
 // Set the amount of time the user can watch the trilogy.
 function setPlayMultiple() {
-    results.multi = 1;
+    results.multi = 0;
+    results.multi = Math.floor(slider.value / 683);
 }
 
 // Set which movie the user get's up to.
 function setMovieResult() {
-    if (slider.value < 198) {
+    let foo = slider.value;
+    if(results.multi > 0) {
+        console.log('Inside multi if.');
+        foo = slider.value - (683 * results.multi);
+    }
+
+    if (foo < 208) {
+        // Fellowship runtime: 208 minutes
         results.movie = 'Fellowship of the Ring';
         results.poster = 'fellowship-of-the-ring';
-    } else if (slider.value > 384) {
+    } else if (foo > 431) {
+        // Two Towers runtime: 223 minutes
         results.movie = 'Two Towers';
         results.poster = 'two-towers';
     } else {
+        // Return of the King runtime: 252 minutes
         results.movie = 'Return of the King';
         results.poster = 'return-of-the-king';
     }
@@ -56,19 +66,33 @@ function setSceneResult() {
 // Clears the results section, then paints all the results into the tags.
 function paintResults() {
     // Clear everything first.
-    results_section.innerHTML = '<h3>You go up to...</h3><h1 id="title_tag"></h1><h4>Specifically, <i><span id="scene_tag"></span></i>. That\'s the one where <span id="scene_description_tag">very little happens</span>.<span id="multiple_tag"> This was after watching the entire trilogy</span></h4><h2 name="multiple_value_tag">3 times over!</h2><br><a onclick="resetPage()" class="go-button">Go again?</a>';
+    results_section.innerHTML = '<h3>You go up to...</h3><h1 id="title_tag"></h1><h4>Specifically, <i><span id="scene_tag"></span></i>. That\'s the one where <span id="scene_description_tag">very little happens</span>.<span id="multiple_tag"> This was after watching the entire trilogy</span></h4><h2 id="multiple_value_tag"></h2><br><a onclick="resetPage()" class="go-button">Go again?</a>';
 
     // Set DOM variables.
     const title_tag = document.querySelector('#title_tag');
     const scene_tag = document.querySelector('#scene_tag');
     const scene_description_tag = document.querySelector('#scene_description_tag');
-    // const multiple_tag = document.querySelector('#multiple_tag');
-    // const multiple_tag_value = document.querySelector('#multiple_tag_value');
+    const multiple_tag = document.querySelector('#multiple_tag');
+    const multiple_value_tag = document.querySelector('#multiple_value_tag');
 
+    // Paint title, scene, and description.
     title_tag.innerHTML = results.movie;
     scene_tag.innerHTML = results.scene;
     scene_description_tag.innerHTML = results.scene_desc;
-    
+
+    // If the user can watch the trilogy through multiple times, paint the multiplier.
+    if(results.multi > 0) {
+        // Show the correct grammar, we're not animals.
+        if(results.multi == 1) {
+            multiple_value_tag.innerHTML = `once already!`;
+        } else {
+            multiple_value_tag.innerHTML = `${results.multi} times over!`;
+        }
+    } else {
+        multiple_tag.innerHTML = " But you didn't actually finish the trilogy. Like, not even once.";
+        multiple_value_tag.style.visibility = "hidden";
+    }
+
 }
 
 // Returns the page to it's original state, as in what the user sees when they first open up the page.
