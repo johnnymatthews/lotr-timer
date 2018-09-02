@@ -60,12 +60,16 @@ function setSceneResult() {
     // Scene times and descriptions are held in movie_data.json
     results.scene = "Prologue: One Ring to Rule Them All...";
     results.scene_desc = "Galadriel talks about what happened before the story";
+
+    // TODO: remove these lines. They're only here for a quick release push to Master.
+    results.scene = "one of the scenes";
+    results.scene_desc = "something happens";
 }
 
 // Clears the results section, then paints all the results into the tags.
 function paintResults() {
     // Clear everything first.
-    results_section.innerHTML = '<h3>You go up to...</h3><h1 id="title_tag"></h1><h4>Specifically, <i><span id="scene_tag"></span></i>. That\'s the one where <span id="scene_description_tag">very little happens</span>.<span id="multiple_tag"> This was after watching the entire trilogy</span></h4><h2 id="multiple_value_tag"></h2><br><a onclick="resetPage()" class="go-button">Go again?</a>';
+    results_section.innerHTML = '<h3>You go up to...</h3><h1 id="title_tag"></h1><h4>Specifically, <i><span id="scene_tag"></span></i>. That\'s the one where <span id="scene_description_tag"></span>.<span id="multiple_tag"> This was after watching the entire trilogy</span></h4><h2 id="multiple_value_tag"></h2><br><a onclick="resetPage()" class="go-button">Go again?</a>';
 
     // Set DOM variables.
     const title_tag = document.querySelector('#title_tag');
