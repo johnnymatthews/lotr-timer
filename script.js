@@ -48,17 +48,9 @@ function setMovieResult() {
 
 // Set which scene in the movie the user get's up to. Also sets the scene description.
 function setSceneResult() {
+    // Scene times and descriptions are held in movie_data.json
     results.scene = "Prologue: One Ring to Rule Them All...";
-    results.scene_desc = "Galadriel talks about what happened before the story.";
-    // switch (true) {
-    //     case (slider.value < 417):
-    //         results.scene = "Prologue: One Ring to Rule Them All...";
-    //         console.log('First scene hit.');
-    //         break;
-    //     default:
-    //         results.scene = "The first scene.";
-    //         console.log('Default hit');
-    // }
+    results.scene_desc = "Galadriel talks about what happened before the story";
 }
 
 // Clears the results section, then paints all the results into the tags.
