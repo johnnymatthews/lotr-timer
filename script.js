@@ -92,7 +92,7 @@ function paintResults() {
             multiple_value_tag.innerHTML = `${results.multi} times over!`;
         }
     } else {
-        multiple_tag.innerHTML = " But you didn't actually finish the trilogy. Like, not even once.";
+        multiple_tag.innerHTML = " But you didn't actually finish the trilogy. Not even once, you big rookie.";
         multiple_value_tag.style.visibility = "hidden";
     }
 
