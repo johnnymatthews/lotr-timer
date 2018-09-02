@@ -23,7 +23,6 @@ function main() {
     setPlayMultiple();
     setMovieResult();
     setSceneResult();
-    setMovieResult();
     paintResults();
 }
 
@@ -37,15 +36,15 @@ function setPlayMultiple() {
 function setMovieResult() {
     let foo = slider.value;
     if(results.multi > 0) {
-        console.log('Inside multi if.');
         foo = slider.value - (683 * results.multi);
+        console.log(foo);
     }
 
     if (foo < 208) {
         // Fellowship runtime: 208 minutes
         results.movie = 'Fellowship of the Ring';
         results.poster = 'fellowship-of-the-ring';
-    } else if (foo > 431) {
+    } else if ((foo > 431) && (foo < 431)) {
         // Two Towers runtime: 223 minutes
         results.movie = 'Two Towers';
         results.poster = 'two-towers';
