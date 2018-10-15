@@ -112,3 +112,5 @@ function showMoviePoster(movie) {
     movie_poster_placeholder.src = `images/${movie}.jpg`;
     movie_poster_placeholder.scrollIntoView();
 }
+
+selectObject();
