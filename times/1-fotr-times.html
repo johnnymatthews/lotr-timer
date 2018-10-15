@@ -252,24 +252,6 @@
     </table>
 </body>
 
-<script>
-    let rows = document.querySelector("#big-table").rows;
-    let i = 0;
-    let foo = [];
-
-    for (let row of rows) {
-
-        foo[i] = [
-            row.cells[0].innerText,
-            row.cells[1].innerText,
-            row.cells[2].innerText
-        ];
-
-        i++;
-
-    }
-
-    console.table(foo);
-</script>
+<script src="script.js"></script>
 
 </html>
