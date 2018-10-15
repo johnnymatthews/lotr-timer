@@ -1,87 +1,87 @@
 const movie_data = [
     // START OF THE FELLOWSHIP
     {
-        "end_time": 4,
+        "end_time": 7,
         "scene": "Prologue: One Ring to Rule Them All...",
         "scene_description": "Cate Blanchett talks about what happened before this story begins. Like, this bit is literally just a prologue"
     }, {
-        "end_time": 8,
+        "end_time": 11,
         "scene": "Concerning Hobbits",
         "scene_description": "Something else happens and it's mint"
     }, {
-        "end_time": 12,
+        "end_time": 16,
         "scene": "The Shire",
         "scene_description": "Stuff about the Shire now"
     }, {
-        "end_time": 12,
+        "end_time": 20,
         "scene": "Very Old Friends",
         "scene_description": "Stuff about the Shire now"
     }, {
-        "end_time": 18,
+        "end_time": 26,
         "scene": "A Long Expected Party",
         "scene_description": "Stuff about the Shire now"
     }, {
-        "end_time": 24,
+        "end_time": 30,
         "scene": "Farewell Dear Bilbo",
         "scene_description": "Stuff about the Shire now"
     }, {
-        "end_time": 33,
+        "end_time": 32,
         "scene": "Keep It Secret, Keep It Safe",
         "scene_description": "Stuff about the Shire now"
     }, {
-        "end_time": 39,
+        "end_time": 35,
         "scene": "The Account of Isildur",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 36,
         "scene": "At the Green Dragon",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 45,
         "scene": "The Shadow of the Past",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 47,
         "scene": "The Passing of the Elves",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 51,
         "scene": "Saruman the White",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 55,
         "scene": "A Short Cut to Mushrooms",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 57,
         "scene": "Bucklebury Ferry",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 63,
         "scene": "At the Sign of The Prancing Pony",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 67,
         "scene": "The Nazgul",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 69,
         "scene": "The Midgewater Marshes",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
-        "scene": "The Sopiling of Isengard",
+        "end_time": 70,
+        "scene": "The Spoiling of Isengard",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 75,
         "scene": "A Knife in the Dark",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 77,
         "scene": "The Caverns of Isengard",
         "scene_description": "asdasdas"
     }, {
-        "end_time": 39,
+        "end_time": 84,
         "scene": "Flight to the Ford",
         "scene_description": "asdasdas"
     }, {
@@ -787,4 +787,4 @@ const movie_data = [
         "scene": "Official Fan Club Credits  ",
         "scene_description": "example"
     },
-];
+];z 
