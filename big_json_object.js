@@ -1,4 +1,4 @@
-{
+const big_json_object = {
     "fellowship": {
         "00:00:00": "Prologue: One Ring to Rule Them All...",
         "00:07:36": "Concerning Hobbits",
