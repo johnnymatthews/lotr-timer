@@ -35,35 +35,34 @@ function setPlayMultiple() {
 // Set which movie the user get's up to.
 function setMovieResult() {
     let foo = slider.value;
+
+    // If the slider is set to a value larger than all three movies
     if(results.multi > 0) {
+        // Get everything down to a single multiple.
         foo = slider.value - (683 * results.multi);
-        console.log(foo);
     }
 
     if (foo < 208) {
         // Fellowship runtime: 208 minutes
         results.movie = 'Fellowship of the Ring';
-        results.poster = 'fellowship-of-the-ring';
     } else if ((foo > 431) && (foo < 431)) {
         // Two Towers runtime: 223 minutes
         results.movie = 'Two Towers';
-        results.poster = 'two-towers';
     } else {
         // Return of the King runtime: 252 minutes
         results.movie = 'Return of the King';
-        results.poster = 'return-of-the-king';
     }
 }
 
 // Set which scene in the movie the user get's up to. Also sets the scene description.
 function setSceneResult() {
-    // Scene times and descriptions are held in movie_data.json
-    results.scene = "Prologue: One Ring to Rule Them All...";
-    results.scene_desc = "Galadriel talks about what happened before the story";
-
-    // TODO: remove these lines. They're only here for a quick release push to Master.
-    results.scene = "one of the scenes";
-    results.scene_desc = "something happens";
+    for(let i = 0; i < movie_data.length; i++) {
+        if(slider.value < movie_data[i].end_time) {
+            results.scene = movie_data[i].scene;
+            results.scene_desc = movie_data[i].scene_description;
+            break;
+        }
+    }
 }
 
 // Clears the results section, then paints all the results into the tags.
@@ -112,5 +111,3 @@ function showMoviePoster(movie) {
     movie_poster_placeholder.src = `images/${movie}.jpg`;
     movie_poster_placeholder.scrollIntoView();
 }
-
-selectObject();

@@ -51,7 +51,7 @@ const big_json_object = {
     },
     "towers": {
         "00:00:00": "The Foundations of Stone",
-        "00:04:19": "The Taming of SmÃ©Agol",
+        "00:04:19": "The Taming of Smeagol",
         "00:12:01": "The Uruk-Hai",
         "00:12:49": "The Three Hunters",
         "00:15:04": "The Burning of the Westfold",
